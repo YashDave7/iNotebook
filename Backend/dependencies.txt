@@ -1,3 +1,4 @@
 express
 express-validator
 mongoose
+bcryptjs

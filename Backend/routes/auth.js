@@ -11,8 +11,8 @@ const router = express.Router();
 
 // ROUTE 1: Create a User using: POST "/api/auth/createuser". NO login required.
 router.post('/createuser', [
-    body('name', 'Enter a value Name').isLength({ min: 2 }),
-    body('email', 'Enter a value Email').isEmail(),
+    body('name', 'Enter a valid Name').isLength({ min: 2 }),
+    body('email', 'Enter a valid Email').isEmail(),
     body('password', 'Enter a 8 character password').isLength({ min: 8 }),
 ], async (req, res) => {
     // If there are errors, return the bad request and the errors.
@@ -20,8 +20,8 @@ router.post('/createuser', [
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    // Check whether user with this Email already exists.
     try {
+        // Check whether user with this Email already exists.
         let user = await User.findOne({ email: req.body.email });
         if (user) {
             return res.status(400).json({ error: "User with this Email already exist" })

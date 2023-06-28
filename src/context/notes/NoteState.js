@@ -3,6 +3,7 @@ import NoteContext from "./noteContext";
 import { toast } from 'react-toastify';
 
 const NoteState = (props) => {
+
     const host = 'http://localhost:4000'
     const notesInitially = []
     const [notes, setNotes] = useState(notesInitially);
@@ -14,7 +15,7 @@ const NoteState = (props) => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5MWU5Yzc0ZjIyNjQ3OTUxZTAwZTc3In0sImlhdCI6MTY4NzMzMDUxNn0.43dGYC5DtJT4bs_1nx2jJ1M-j64_t7X3Le9LNxbViQ4"
+                "auth-token": localStorage.getItem('token')
             },
         });
         const json = await response.json();
@@ -29,11 +30,11 @@ const NoteState = (props) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5MWU5Yzc0ZjIyNjQ3OTUxZTAwZTc3In0sImlhdCI6MTY4NzMzMDUxNn0.43dGYC5DtJT4bs_1nx2jJ1M-j64_t7X3Le9LNxbViQ4"
+                "auth-token": localStorage.getItem('token')
             },
             body: JSON.stringify({ title, description, tag }),
         });
-        const note = await response .json();
+        const note = await response.json();
         // console.log(note);
         setNotes(notes.concat(note));
         toast.success("Note Added Successfully");
@@ -46,7 +47,7 @@ const NoteState = (props) => {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5MWU5Yzc0ZjIyNjQ3OTUxZTAwZTc3In0sImlhdCI6MTY4NzMzMDUxNn0.43dGYC5DtJT4bs_1nx2jJ1M-j64_t7X3Le9LNxbViQ4"
+                "auth-token": localStorage.getItem('token')
             },
         });
         const json = response.json();
@@ -68,7 +69,7 @@ const NoteState = (props) => {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ5MWU5Yzc0ZjIyNjQ3OTUxZTAwZTc3In0sImlhdCI6MTY4NzMzMDUxNn0.43dGYC5DtJT4bs_1nx2jJ1M-j64_t7X3Le9LNxbViQ4"
+                "auth-token": localStorage.getItem('token')
             },
             body: JSON.stringify({ title, description, tag }),
         });

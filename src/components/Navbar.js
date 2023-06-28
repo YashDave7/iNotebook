@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/login');
+    }
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -10,7 +15,7 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="container collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
                             <Link className="nav-link" to="/">Home</Link>
@@ -19,10 +24,14 @@ const Navbar = () => {
                             <Link className="nav-link" to="/about">About</Link>
                         </li>
                     </ul>
-                    {/* <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form> */}
+
+                    {!localStorage.getItem('token') ?
+                        <form className='d-flex'>
+                            <Link className="btn btn-primary mx-1" to="/signup">Sign Up</Link>
+                            <Link className="btn btn-primary mx-1" to="/login">Login</Link>
+                        </form> :
+                        <button className='btn btn-primary' onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>}
+
                 </div>
             </nav>
         </>

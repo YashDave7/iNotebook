@@ -35,6 +35,8 @@ const Login = () => {
 
   return (
     <>
+       <div className="container" style={{"marginTop": "50px"}}>
+        <h2 className="" style={{ "margin": "20px", "textAlign": "center" }}>Login to iNotebook</h2>
       <form className="mx-1 mx-md-4" onSubmit={handleSubmit}>
 
         <div className="d-flex flex-row align-items-center mb-4">
@@ -56,6 +58,7 @@ const Login = () => {
           <p className='my-3 mx-auto'>Don't have an account? <Link to="/signup">Signup</Link> </p>
         </div>
       </form>
+      </div>
     </>
   )
 }

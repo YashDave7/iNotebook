@@ -7,20 +7,16 @@ import NoteState from './context/notes/NoteState';
 import Alert from './components/Alert';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import { useContext } from 'react';
+import noteContext from "./context/notes/noteContext"
 
 function App() {
-  const openSignup = () => {
 
-  }
-
-  const openLogin = () => {
-
-  }
   return (
     <>
       <NoteState>
         <Router>
-          <Navbar openSignup={openSignup} openLogin={openLogin} />
+          <Navbar />
           <Alert />
           <div className="container">
             <Routes>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import NoteContext from "./noteContext";
 import { toast } from 'react-toastify';
 
@@ -6,7 +6,24 @@ const NoteState = (props) => {
 
     const host = 'http://localhost:4000'
     const notesInitially = []
+    const userInitially = []
     const [notes, setNotes] = useState(notesInitially);
+    const [user, setUser] = useState(userInitially);
+
+    // Getting User details from token.
+    // API Call.
+    const getUser = async () => {
+        // API call.
+        const response = await fetch(`${host}/api/auth/getuser`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
+            },
+        });
+        const json = await response.json();
+        setUser(json);
+    }
 
     // Get all Notes.
     const getNotes = async () => {
@@ -92,7 +109,7 @@ const NoteState = (props) => {
     }
 
     return (
-        <NoteContext.Provider value={{ notes, setNotes, addNote, deleteNote, editNote, getNotes }}>
+        <NoteContext.Provider value={{ notes, setNotes, addNote, deleteNote, editNote, getNotes, getUser, user, setUser }}>
             {props.children}
         </NoteContext.Provider>
     )

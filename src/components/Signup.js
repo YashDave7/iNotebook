@@ -42,6 +42,8 @@ const Signup = () => {
 
     return (
         <>
+         <div className="container" style={{"marginTop": "50px"}}>
+        <h2 className="" style={{ "margin": "20px", "textAlign": "center" }}>Signup to iNotebook</h2>
             <form onSubmit={handleSubmit} className="mx-1 mx-md-4">
 
                 <div className="d-flex flex-row align-items-center mb-4">
@@ -72,10 +74,11 @@ const Signup = () => {
                     </div>
                 </div>
                 <div className="d-flex flex-column justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" className="btn btn-primary btn-lg mx-3">Register</button>
+                    <button type="submit" className="btn btn-primary btn-lg mx-3">Sign Up</button>
                     <p className='my-3 mx-auto'>Already have a account? <Link to="/login">Login</Link></p>
                 </div>
             </form>
+            </div>
         </>
     )
 }

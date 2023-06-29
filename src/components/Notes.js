@@ -8,13 +8,12 @@ const Notes = () => {
   const context = useContext(noteContext);
   let navigate = useNavigate();
   const { notes, getNotes, editNote } = context;
+
   useEffect(() => {
-    if(localStorage.getItem('token'))
-    {
+    if (localStorage.getItem('token')) {
       getNotes()
     }
-    else
-    {
+    else {
       navigate('/login');
     }
     // eslint-disable-next-line
@@ -23,7 +22,9 @@ const Notes = () => {
   const ref = useRef(null)
   const refClose = useRef(null)
 
+
   const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "" })
+
 
   const updateNote = (currentNote) => {
     ref.current.click();
@@ -41,10 +42,13 @@ const Notes = () => {
 
   return (
     <>
-      <AddNote />
+      {/* <AddNote /> */}
+      {/* EDIT NOTE MODAL BOX */}
       <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
       </button>
+
+
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -77,8 +81,20 @@ const Notes = () => {
         </div>
       </div>
 
+
+      {/* YOUR NOTES SECTION */}
       <div className="row my-3">
-        <h2>You Notes</h2>
+        <div className="notesHeading d-flex align-items-center" style={{"marginBottom": "40px"}}>
+          <h2 className='my-3' style={{"marginRight": "60px"}}>You Notes</h2>
+          {/* <div className="input-group"> */}
+          <div className="form-outline d-flex" style={{ "height": "40px" }}>
+            <input type="search" id="form1" className="form-control" placeholder='Search Notes' />
+            <button type="button" className="btn btn-primary">
+              <i className="fas fa-search"></i>
+            </button>
+          </div>
+          {/* </div> */}
+        </div>
         <div className="container mx-2">
           {notes.length === 0 && 'No notes to display'}
         </div>

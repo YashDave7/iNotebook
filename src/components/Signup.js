@@ -43,39 +43,39 @@ const Signup = () => {
     return (
         <>
          <div className="container" style={{"marginTop": "50px"}}>
-        <h2 className="" style={{ "margin": "20px", "textAlign": "center" }}>Signup to iNotebook</h2>
+        <h2 className="" style={{ "margin": "20px", "textAlign": "center", "color": "#F4EEE0" }}>Signup to iNotebook</h2>
             <form onSubmit={handleSubmit} className="mx-1 mx-md-4">
 
                 <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
-                        <input type="text" name='name' id="form3Example1c" className="form-control" defaultValue={credentials.name} onChange={onChange} placeholder='Name' required />
+                        <input type="text" name='name' id="form3Example1c" className="form-control" defaultValue={credentials.name} onChange={onChange} style={{ "color": "#393646", "borderColor": "#F4EEE0" }} placeholder='Name' required />
                     </div>
                 </div>
 
                 <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
-                        <input type="email" name='email' id="form3Example3c" className="form-control" defaultValue={credentials.email} onChange={onChange} placeholder='Email' required />
+                        <input type="email" name='email' id="form3Example3c" className="form-control" defaultValue={credentials.email} onChange={onChange} style={{ "color": "#393646", "borderColor": "#F4EEE0" }} placeholder='Email' required />
                     </div>
                 </div>
 
                 <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
-                        <input type="password" name='password' id="form3Example4c" className="form-control" defaultValue={credentials.password} onChange={onChange} placeholder='Set Password' minLength={8} required />
+                        <input type="password" name='password' id="form3Example4c" className="form-control" defaultValue={credentials.password} onChange={onChange} style={{ "color": "#393646", "borderColor": "#F4EEE0" }} placeholder='Set Password' minLength={8} required />
                     </div>
                 </div>
 
                 <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
-                        <input type="password" name='confirmPassword' id="form3Example4cd" className="form-control" defaultValue={credentials.confirmPassword} onChange={onChange} placeholder='Confirm Password' minLength={8} required />
+                        <input type="password" name='confirmPassword' id="form3Example4cd" className="form-control" defaultValue={credentials.confirmPassword} style={{ "color": "#393646", "borderColor": "#F4EEE0" }} onChange={onChange} placeholder='Confirm Password' minLength={8} required />
                     </div>
                 </div>
                 <div className="d-flex flex-column justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" className="btn btn-primary btn-lg mx-3">Sign Up</button>
-                    <p className='my-3 mx-auto'>Already have a account? <Link to="/login">Login</Link></p>
+                    <button type="submit" className="btn btn-primary btn-lg mx-3" style={{"backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0"}}>Sign Up</button>
+                    <p className='my-3 mx-auto' style={{"color": "#F4EEE0"}}>Already have a account? <Link style={{"color": "#F4EEE0"}} to="/login">Login</Link></p>
                 </div>
             </form>
             </div>

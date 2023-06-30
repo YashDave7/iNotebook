@@ -19,7 +19,6 @@ router.get('/fetchallnotes', fetchUser, async (req, res) => {
 // ROUTE 2: Add a new note using : POST "api/notes/addnote". Login required.
 router.post('/addnote', fetchUser, [
     body('title', 'Enter a Valid title').isLength({ min: 3 }),
-    body('description', 'Enter a value Description').isLength({ min: 5 }),
 ], async (req, res) => {
     try {
 

@@ -42,7 +42,7 @@ const Notes = () => {
 
   return (
     <>
-      {/* <AddNote /> */}
+
       {/* EDIT NOTE MODAL BOX */}
       <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
@@ -74,8 +74,8 @@ const Notes = () => {
               </form>
             </div>
             <div className="modal-footer">
-              <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button disabled={note.etitle.length < 5 || note.edescription.length < 5} onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
+              <button disabled={note.etitle.length < 5} onClick={handleClick} type="button" style={{"backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0"}} className="btn btn-primary">Update Note</button>
+              <button ref={refClose} type="button" className="btn btn-secondary" style={{"backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0"}} data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -84,16 +84,18 @@ const Notes = () => {
 
       {/* YOUR NOTES SECTION */}
       <div className="row my-3">
-        <div className="notesHeading d-flex align-items-center" style={{"marginBottom": "40px"}}>
-          <h2 className='my-3' style={{"marginRight": "60px"}}>You Notes</h2>
-          {/* <div className="input-group"> */}
-          <div className="form-outline d-flex" style={{ "height": "40px" }}>
-            <input type="search" id="form1" className="form-control" placeholder='Search Notes' />
-            <button type="button" className="btn btn-primary">
-              <i className="fas fa-search"></i>
-            </button>
+        <div className="notesHeading d-flex align-items-center justify-content-between" style={{ "marginBottom": "40px" }}>
+          <h2 className='my-3' style={{ "marginRight": "60px", "color": "#F4EEE0" }}> <i class="fa-regular fa-clipboard"></i> Your Notes</h2>
+          <div className="d-flex" style={{ "borderColor": "#F4EEE0", "marginRight": "21px" }}>
+            {/* SEARCH BAR. */}
+            <div className="form-outline d-flex mx-3" >
+              <input type="search" id="form1" className="form-control" style={{ "color": "#393646", "borderColor": "#F4EEE0", "borderTopRightRadius": "0px", "borderBottomRightRadius": "0px" }} placeholder='Search Notes' />
+              <button type="button" className="btn" style={{ "backgroundColor": "#393646", "borderColor": "#F4EEE0", "borderTopLeftRadius": "0px", "borderBottomLeftRadius": "0px" }}>
+                <i className="fas fa-search" style={{ "color": "#F4EEE0" }}></i>
+              </button>
+            </div>
+            <AddNote />
           </div>
-          {/* </div> */}
         </div>
         <div className="container mx-2">
           {notes.length === 0 && 'No notes to display'}

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import NoteContext from "./noteContext";
 import { toast } from 'react-toastify';
 
@@ -43,40 +43,48 @@ const NoteState = (props) => {
     // Add a Note.
     const addNote = async (title, description, tag) => {
         // API call.'
-        const response = await fetch(`${host}/api/notes/addnote`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "auth-token": localStorage.getItem('token')
-            },
-            body: JSON.stringify({ title, description, tag }),
-        });
-        const note = await response.json();
-        // console.log(note);
-        setNotes(notes.concat(note));
-        toast.success("Note Added Successfully");
+        try {
+            const response = await fetch(`${host}/api/notes/addnote`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": localStorage.getItem('token')
+                },
+                body: JSON.stringify({ title, description, tag }),
+            });
+            const note = await response.json();
+            setNotes(notes.concat(note));
+            toast.success("Note Added Successfully");
+        } catch (error) {
+            console.log(error);
+            toast.error("Something went wrong");
+        }
     }
 
     // Delete a Note.
     const deleteNote = async (id) => {
-        // API call.'
-        const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "auth-token": localStorage.getItem('token')
-            },
-        });
-        const json = response.json();
-        console.log(json);
+        try {
+            // API call.
+            await fetch(`${host}/api/notes/deletenote/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": localStorage.getItem('token')
+                },
+            });
+            // const json = response.json();
+
+            // Logic to delete note at frontend.
+            const newNotes = notes.filter((note) => {
+                return note._id !== id
+            })
+            setNotes(newNotes);
+            toast.success("Note Deleted Successfully");
+        } catch (error) {
+            toast.error("Something went wrong");
+        }
 
 
-        // Logic to delete note at frontend.
-        const newNotes = notes.filter((note) => {
-            return note._id !== id
-        })
-        setNotes(newNotes);
-        toast.success("Note Deleted Successfully");
     }
 
     // Edit a Node. 

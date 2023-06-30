@@ -14,7 +14,7 @@ const NoteSchema = new Schema({
     },
     tag: {
         type: String,
-        default: "General"
+        default: "Other"
     },
     date: {
         type: Date,

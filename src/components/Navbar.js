@@ -14,7 +14,7 @@ const Navbar = (props) => {
             getUser();
         }
         // eslint-disable-next-line
-    }, [])
+    }, [location.pathname])
 
     const handleLogout = () => {
         localStorage.removeItem('token');

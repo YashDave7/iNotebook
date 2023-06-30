@@ -41,7 +41,7 @@ const AddNote = () => {
                                 <div className="mb-3">
                                     {/* <input type="text" className="form-control" id="tag" name="tag" value={note.tag} onChange={onChange}  /> */}
                                     {/* <label for="inputState">Tag</label> */}
-                                    <select className="form-control"  id="inputState tag" name="tag" value={note.tag} onChange={onChange}>
+                                    <select className="form-control"  id="inputState tag" name="tag" defaultValue={"Others"} value={note.tag} onChange={onChange}>
                                         <option>Select Tag</option>
                                         <option>Personal</option>
                                         <option>Study</option>

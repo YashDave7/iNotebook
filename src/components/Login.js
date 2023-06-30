@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { GoogleLogin } from 'react-google-login'
 import { toast } from 'react-toastify';
 
+const clientId = "926816405536-2ojt4mmea2ts9lh9h6kdhq64i6di3bs2.apps.googleusercontent.com"
 const Login = () => {
+
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();
   const handleSubmit = async (e) => {

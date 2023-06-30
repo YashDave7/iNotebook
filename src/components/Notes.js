@@ -103,8 +103,8 @@ const Notes = () => {
             <AddNote />
           </div>
         </div>
-        <div className="container mx-2">
-          {notes.length === 0 && 'No notes to display'}
+        <div className="container mx-3" style={{"color": "#F4EEE0", "fontSize": "17px"}}>
+          {notes.length === 0 && 'No notes to display.'}
         </div>
         {notes.map((note) => {
           return <NoteItem key={note._id} updateNote={updateNote} note={note} />

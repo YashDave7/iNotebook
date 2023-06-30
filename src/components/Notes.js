@@ -68,14 +68,20 @@ const Notes = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="tag" className="form-label">Tag</label>
-                  <input type="text" className="form-control" id="etag" name="etag" value={note.etag} onChange={onChange} />
+                  <select className="form-control" id="inputState etag" name="etag" value={note.etag} onChange={onChange}>
+                    <option>Select Tag</option>
+                    <option>Personal</option>
+                    <option>Study</option>
+                    <option>Expenses</option>
+                    <option>Others</option>
+                  </select>
                 </div>
 
               </form>
             </div>
             <div className="modal-footer">
-              <button disabled={note.etitle.length < 5} onClick={handleClick} type="button" style={{"backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0"}} className="btn btn-primary">Update Note</button>
-              <button ref={refClose} type="button" className="btn btn-secondary" style={{"backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0"}} data-bs-dismiss="modal">Close</button>
+              <button disabled={note.etitle.length < 5} onClick={handleClick} type="button" style={{ "backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0" }} className="btn btn-primary">Update Note</button>
+              <button ref={refClose} type="button" className="btn btn-secondary" style={{ "backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0" }} data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

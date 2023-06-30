@@ -19,8 +19,8 @@ const AddNote = () => {
     return (
         <div>
 
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNoteModal" style={{"backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0"}}>
-                New Note <i class="fa-solid fa-plus"></i>   
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNoteModal" style={{ "backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0" }}>
+                New Note <i class="fa-solid fa-plus"></i>
             </button>
 
 
@@ -33,20 +33,25 @@ const AddNote = () => {
                         <div className="modal-body">
                             <form>
                                 <div className="mb-3">
-                                    {/* <label htmlFor="title" className="form-label">Title</label> */}
                                     <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" value={note.title} onChange={onChange} minLength="5" required placeholder='Title (min. 5 characters)' />
                                 </div>
                                 <div className="mb-3">
-                                    {/* <label htmlFor="description" className="form-label">Description</label> */}
                                     <input type="text" className="form-control" id="description" name="description" value={note.description} onChange={onChange} placeholder='Description' />
                                 </div>
                                 <div className="mb-3">
-                                    {/* <label htmlFor="tag" className="form-label">Tag</label> */}
-                                    <input type="text" className="form-control" id="tag" name="tag" value={note.tag} onChange={onChange} placeholder='Tag' />
+                                    {/* <input type="text" className="form-control" id="tag" name="tag" value={note.tag} onChange={onChange}  /> */}
+                                    {/* <label for="inputState">Tag</label> */}
+                                    <select className="form-control"  id="inputState tag" name="tag" value={note.tag} onChange={onChange}>
+                                        <option>Select Tag</option>
+                                        <option>Personal</option>
+                                        <option>Study</option>
+                                        <option>Expenses</option>
+                                        <option>Others</option>
+                                    </select>
                                 </div>
-                                <div style={{"float": "right"}}>
-                                    <button type="submit" disabled={note.title.length < 5 } className="btn mx-3" style={{"backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0"}}  onClick={handleClick}>Add Note</button>
-                                    <button type="button" className="btn" style={{"backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0"}} data-bs-dismiss="modal">Close</button>
+                                <div style={{ "float": "right" }}>
+                                    <button type="submit" disabled={note.title.length < 5} className="btn mx-3" style={{ "backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0" }} onClick={handleClick}>Add Note</button>
+                                    <button type="button" className="btn" style={{ "backgroundColor": "#393646", "color": "#F4EEE0", "borderColor": "#F4EEE0" }} data-bs-dismiss="modal">Close</button>
                                 </div>
                             </form>
                         </div>

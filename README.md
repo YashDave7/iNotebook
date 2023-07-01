@@ -12,37 +12,37 @@ iNotebook is a web application that stores all your notes on the cloud which mak
 
 
 ## Snapshots on the project:
-1. SignUp Page.\ ![Alt text](assets/signup.png)  
-2. Login Page.\ ![Alt text](assets/signup.png)
-3. Home Page.\ ![Alt text](assets/home.png)
-4. Add Note Section.\ ![Alt text](assets/addNote.png)
-5. Update Note section.\ ![Alt text](assets/updateNote.png)
-6. User Profile Section.\ ![Alt text](assets/userDetails.png)
+1. SignUp Page. ![Alt text](assets/signup.png)  
+2. Login Page. ![Alt text](assets/signup.png)
+3. Home Page. ![Alt text](assets/home.png)
+4. Add Note Section. ![Alt text](assets/addNote.png)
+5. Update Note section. ![Alt text](assets/updateNote.png)
+6. User Profile Section. ![Alt text](assets/userDetails.png)
 
 
 ## Technologies Used:
 1. Backend:-   Nodejs(Expressjs) 
-2. Frontend:-  React.js
+2. Frontend:-  React.js,
                Bootstrap   
 3. Database:-  MongoDB
         
 
 ## Dependencies Used:
-Backend :- 1. bcryptjs\
-           2. cors\
-           3. dotenv\
-           4. express\
-           5. express-validator\
-           6. jsonwebtoken\
-           7. mongoose\
+Backend :- 1. bcryptjs,
+           2. cors,
+           3. dotenv,
+           4. express,
+           5. express-validator,
+           6. jsonwebtoken,
+           7. mongoose
 
-Frontend :- 1. concurrently\
-            2. dotenv\
-            3. react\
-            4. react-dom\
-            5. react-router-dom\
-            6. react-scripts\
-            7. react-toastify\
+Frontend :- 1. concurrently,
+            2. dotenv,
+            3. react,
+            4. react-dom,
+            5. react-router-dom,
+            6. react-scripts,
+            7. react-toastify
 
 ## Run on your Local Device:
 

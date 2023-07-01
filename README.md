@@ -12,12 +12,12 @@ iNotebook is a web application that stores all your notes on the cloud which mak
 
 
 ## Snapshots on the project:
-1. SignUp Page. ![Alt text](assets/signup.png)  
-2. Login Page. ![Alt text](assets/signup.png)
-3. Home Page. ![Alt text](assets/home.png)
-4. Add Note Section. ![Alt text](assets/addNote.png)
-5. Update Note section. ![Alt text](assets/updateNote.png)
-6. User Profile Section. ![Alt text](assets/userDetails.png)
+1. SignUp Page. \ ![Alt text](assets/signup.png)  
+2. Login Page. \ ![Alt text](assets/signup.png)
+3. Home Page. \ ![Alt text](assets/home.png)
+4. Add Note Section. \ ![Alt text](assets/addNote.png)
+5. Update Note section. \ ![Alt text](assets/updateNote.png)
+6. User Profile Section. \ ![Alt text](assets/userDetails.png)
 
 
 ## Technologies Used:
@@ -28,21 +28,21 @@ iNotebook is a web application that stores all your notes on the cloud which mak
         
 
 ## Dependencies Used:
-1. Backend :-  bcryptjs
-               cors
-               dotenv
-               express
-               express-validator
-               jsonwebtoken
-               mongoose
+Backend :- 1. bcryptjs
+           2. cors
+           3. dotenv
+           4. express
+           5. express-validator
+           6. jsonwebtoken
+           7. mongoose
 
-2. Frontend :- concurrently
-               dotenv
-               react
-               react-dom
-               react-router-dom
-               react-scripts
-               react-toastify
+Frontend :- 1. concurrently
+            2. dotenv
+            3. react
+            4. react-dom
+            5. react-router-dom
+            6. react-scripts
+            7. react-toastify
 
 ## Run on your Local Device:
 
@@ -57,4 +57,4 @@ Change the MONGODB string to your owns and assign a JWTSERCET of your owns.
 
 ### `npm run both`
 
-This runs the app in the development mode on [http://localhost:3000](http://localhost:3000) and runs to SERVER on [http://localhost:4000](http://localhost:4000)
+This runs the app in the development mode on [http://localhost:3000](http://localhost:3000) and runs SERVER on [http://localhost:4000](http://localhost:4000)

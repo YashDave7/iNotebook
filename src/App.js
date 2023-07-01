@@ -7,20 +7,9 @@ import NoteState from './context/notes/NoteState';
 import Alert from './components/Alert';
 import Signup from './components/Signup';
 import Login from './components/Login';
-// import { useContext, useEffect } from 'react';
+
 
 function App() {
-  // const context = useContext(noteContext);
-  //   const { getUser, user } = context;
-
-    // const location = useLocation();
-
-    // useEffect(() => {
-    //     if (localStorage.getItem('token') && (location.pathname === '/' || location.pathname === '/about')) {
-    //         getUser();
-    //     }
-    //     // eslint-disable-next-line
-    // }, [])
 
   return (
     <>

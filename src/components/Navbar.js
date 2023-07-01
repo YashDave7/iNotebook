@@ -24,7 +24,7 @@ const Navbar = (props) => {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark" style={{"height": "70px", "backgroundColor": "#393646"}}>
-                <Link className="navbar-brand mx-3" to="/" style={{"fontSize": "30px", "color": "#F4EEE0"}}> <i class="fa-solid fa-paste"></i> iNotebook</Link>
+                <Link className="navbar-brand mx-3" to="/" style={{"fontSize": "30px", "color": "#F4EEE0"}}> <i className="fa-solid fa-paste"></i> iNotebook</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

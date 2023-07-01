@@ -1,9 +1,8 @@
 const connectToMongoDB = require('./db');
 const express = require('express');
 const cors = require('cors');
-
-// CONNECTION TO THE DATABASE.
-connectToMongoDB();
+const dotenv = require("dotenv");
+dotenv.config({path: __dirname+'/.env'});
 
 const app = express();
 const port = 4000;
@@ -13,6 +12,9 @@ app.use(express.json());
 
 // MIDDLEWARES.
 app.use(express.json());
+
+// CONNECTION TO THE DATABASE.
+connectToMongoDB();
 
 // AVAILABLE ROUTES.
 app.use('/api/auth', require('./routes/auth'));

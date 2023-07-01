@@ -13,7 +13,7 @@ iNotebook is a web application that stores all your notes on the cloud which mak
 
 ## Snapshots on the project:
 1. SignUp Page. ![Alt text](assets/signup.png)  
-2. Login Page. ![Alt text](assets/signup.png)
+2. Login Page. ![Alt text](assets/login.png)
 3. Home Page. ![Alt text](assets/home.png)
 4. Add Note Section. ![Alt text](assets/addNote.png)
 5. Update Note section. ![Alt text](assets/updateNote.png)
